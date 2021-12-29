@@ -2,13 +2,13 @@
 <html>
 
 <head>
-  <title>{{ page.title }}</title>
+  <title>{% block title %}{% endblock title %}</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 </head>
 
 <body>
-  {{ page.content | safe }}
+  {% block content %}{% endblock content%}
 </body>
 
 </html>
