@@ -1,6 +1,6 @@
 +++
 title = "First Zola page"
-template = "base.html"
+template = "blog-page.html"
 +++
 
 # Hello world!
