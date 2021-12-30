@@ -1,6 +1,6 @@
 +++
 title = "First Zola page"
-template = "blog-page.html"
+date = 2020-06-29
 +++
 
 # Hello world!
