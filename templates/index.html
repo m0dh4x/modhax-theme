@@ -3,5 +3,8 @@
 {% block title %} Hello World {% endblock title %}
 
 {% block content %}
-<h1>My first Zola page! </h1>
+<h1>{{section.title}}</h1>
+{% set test = get_section(path="blog/_index.md") %}
+<pre>{{ test | json_encode(pretty=true)}}</pre>
+<h2>My first Zola page! </h2>
 {% endblock content%}

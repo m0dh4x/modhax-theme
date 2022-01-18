@@ -3,6 +3,7 @@
 {% block title %} My Blog {% endblock title %}
 
 {% block content %}
+<pre>{{section | json_encode(pretty=true) }}</pre>
 <h1>{{ section.title }}</h1>
 <ul>
   {% for page in section.pages %}
