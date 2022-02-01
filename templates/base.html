@@ -1,6 +1,9 @@
+{% import "macros/head.html" as macros_head %}
+
 <!DOCTYPE HTML>
 <html>
 
+{{ macros_head::stylesheet() }}
 <head>
   <title>{% block title %}{% endblock title %}</title>
   <meta charset="utf-8" />
@@ -8,6 +11,7 @@
 </head>
 
 <body>
+  
   {% block content %}{% endblock content%}
 </body>
 
