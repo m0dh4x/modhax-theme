@@ -1,12 +1,19 @@
-{% extends "base.html" %}
+{% import "macros/head.html" as macros_head %}
 
-{% block title %} Hello World {% endblock title %}
+<!DOCTYPE HTML>
+<html>
+<head>
+  {{ macros_head::meta() }}
 
-{% block content %}
-<h1>{{section.title}}</h1>
-{% set test = get_section(path="blog/_index.md") %}
+  {% block pagetitle %}
+    {{ macros_head::site_title(page_title="Home") }}
+  {% endblock pagetitle %}
 
-<h2>My first Zola page! </h2>
-<div>HAllo</div>
+  {{ macros_head::stylesheet() }}
+</head>
+<body>
+  
+  {% block content %}{% endblock content%}
+</body>
 
-{% endblock content%}
+</html>

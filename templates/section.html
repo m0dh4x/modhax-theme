@@ -1,0 +1,32 @@
+{% extends "index.html" %}
+
+{% block pagetitle %}
+    {{ macros_head::site_title(page_title = section.title) }}
+{% endblock pagetitle %}
+ 
+
+{% block content %}
+  <h1>{{section.title}}</h1>
+  {% set test = get_section(path=section.subsections | first) %}
+
+  <h2>My first Zola page! </h2>
+
+{% for page in section.pages %}
+
+  <h3>{{page.title}}</h3>
+
+{% endfor%}
+
+<h2>BLOG</h2>
+
+{% for test in test.pages %}
+  <p> {{test.title}}</p>
+  <a href="{{test.permalink}}">weiterlesen</a>
+{% endfor %}
+
+
+<pre>{{section | json_encode(pretty=true)}}</pre>
+{# <pre>{{test | json_encode(pretty=true)}}</pre> #}
+{# <pre>{{test | json_encode(pretty=true)}}</pre> #}
+
+{% endblock content%}

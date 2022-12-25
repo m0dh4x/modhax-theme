@@ -1,8 +1,9 @@
-{% extends "base.html" %}
+{% extends "index.html" %}
 
-{% block title %}{{ page.title }}{% endblock title %}
+{% block pagetitle %}{{ page.title }}{% endblock title %}
 
 {% block content %}
+<h1>Test</h1>
 <h2>{{page.date}} - {{page.reading_time}} min</h2>
 {{ page.content | safe }}
 {% endblock content %}

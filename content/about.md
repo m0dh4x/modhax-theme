@@ -1,7 +1,6 @@
 +++
-title = "Moinsen das ist ja goil"
+title = "Das ist die \"About\" Seite "
+template = "page.html"
 +++
 
-## Ich teste mich mal aus.
-
-Das ist wohl eine Page
+### Example Content.

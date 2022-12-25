@@ -1,5 +1,8 @@
+title = "m0dh4x"
+description = "a simple about one pager"
+
 # The URL the site will be built for
-base_url = "https://modhax-theme.com"
+base_url = "https://modhax-theme.dev"
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true

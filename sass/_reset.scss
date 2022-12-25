@@ -1,79 +1,57 @@
-/***
-    The new CSS reset - version 1.6.0 (last updated 29.4.2022)
-    GitHub page: https://github.com/elad2412/the-new-css-reset
-***/
+/*  
+  Sets the base css values (remove user agent styles). 
+  inherited elements (effected their children) to "inherit" & non-inherited to "initial" 
+  except for display property
 
-/*
-    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
-    - The "symbol *" part is to solve Firefox SVG sprite bug
- */
-*:where(:not(html, iframe, canvas, img, svg, video):not(svg *, symbol *)) {
+  inspired by the new CSS reset - version 1.8.2 (last updated 23.12.2022)
+  GitHub page: https://github.com/elad2412/the-new-css-reset
+*/
+
+*:where(:not(html, iframe, canvas, img, svg, video, audio)) {
   all: unset;
   display: revert;
 }
 
-/* Preferred box-sizing value */
+// default behavior for box-sizing (includes all padding and border for sizing calculation)
+// e.g. width = border + padding + width, height = border + padding + height
 *,
-*::before,
-*::after {
+*::after,
+::before {
   box-sizing: border-box;
 }
 
-/* Reapply the pointer cursor for anchor tags */
+html {
+  font-size: 62.5%;
+}
+
 a,
 button {
   cursor: revert;
 }
 
-/* Remove list styles (bullets/numbers) */
+// remove bullets/numbers from lists
 ol,
 ul,
 menu {
   list-style: none;
 }
 
-/* For images to not be able to exceed their container */
-img {
-  max-width: 100%;
+// remove triangle on safari
+summary::-webkit-details-marker {
+  display: none;
 }
 
-/* removes spacing between cells in tables */
+img {
+  width: 100%;
+}
+
+// remove spacing between table cells
+// tables no have shared borders
 table {
   border-collapse: collapse;
 }
 
-/* revert the 'white-space' property for textarea elements on Safari */
-textarea {
-  white-space: revert;
-}
-
-/* minimum style to allow to style meter element */
-meter {
-  -webkit-appearance: revert;
-  appearance: revert;
-}
-
-/* reset default text opacity of input placeholder */
-::placeholder {
-  color: unset;
-}
-
-/* fix the feature of 'hidden' attribute.
- display:revert; revert to element instead of attribute */
-:where([hidden]) {
-  display: none;
-}
-
-/* revert for bug in Chromium browsers
- - fix for the content editable attribute will work properly. */
-:where([contenteditable]) {
-  -moz-user-modify: read-write;
-  -webkit-user-modify: read-write;
-  overflow-wrap: break-word;
-  -webkit-line-break: after-white-space;
-}
-
-/* apply back the draggable feature - exist only in Chromium and Safari */
-:where([draggable='true']) {
-  -webkit-user-drag: element;
+// set 
+pre {
+  white-space: pre;
 }
