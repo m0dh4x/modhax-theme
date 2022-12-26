@@ -1,16 +1,19 @@
+@import "font";
+
 :root {
-  --ff-base: "Titillium Web", " Helvetica Neue Light", " Helvetica Neue",
-  " Helvetica ", " Arial", sans-serif;
+  --ff-base: "Titillium Web", " Helvetica Neue Light", " Helvetica Neue", " Helvetica", " Arial", sans-serif;
 
   --fs-base: 1.2rem;
 
-  --fs-h1: 5.6rem;
+  --fs-h1: 7.2rem;
   --fs-h2: 4.8rem;
-  --fs-h3: 4.0rem;
-  --fs-h4: 3.2rem;
-  --fs-h5: 2.4rem;
-  --fs-h6: 1.6rem;
+  --fs-h3: 3.2rem;
+  --fs-h4: 2.4rem;
+  --fs-h5: 1.8rem;
+  --fs-h6: 1.2rem;
 
+  --clr-primary: #14213d;
+  --clr-secondary: #fca311;
 
 }
 
@@ -29,6 +32,3 @@ $gray-500: #6d6d6b;
 $gray-600: #494947;
 $gray-700: #242424;
 $black: #000000;
-
-$primary: $blue;
-$secondary: $orange;
