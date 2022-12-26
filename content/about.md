@@ -1,6 +1,5 @@
 +++
-title = "Das ist die \"About\" Seite "
-template = "page.html"
+title = "This will be the about page"
 +++
 
 ### Example Content.

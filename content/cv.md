@@ -1,5 +1,5 @@
 +++
-title = "Das wird die \"CV\"-Seite "
+title = "This will be the CV page"
 +++
 
 ### Example Content
