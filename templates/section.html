@@ -6,7 +6,9 @@
  
 
 {% block content %}
-  <h1>{{section.title}}</h1>
+  
+  <h1 class="main-title"></h1>
+  <span class="main-cursor"></span>
   {% set test = get_section(path=section.subsections | first) %}
 
   <h2>My first Zola page! </h2>
