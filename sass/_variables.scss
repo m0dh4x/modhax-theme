@@ -1,24 +1,21 @@
 @import "font";
 
 :root {
-  --ff-base: "Titillium Web", " Helvetica Neue Light", " Helvetica Neue", " Helvetica", " Arial", sans-serif;
+  --ff-base: "Titillium Web", " Helvetica Neue Light", " Helvetica Neue",
+    " Helvetica", " Arial", sans-serif;
 
-  --fs-base: 1.2rem;
+  --fs-base: clamp(1.6rem, 0.55vw + 1.39rem, 2.1rem);
 
-  --fs-h1: 7.2rem;
-  --fs-h2: 4.8rem;
-  --fs-h3: 3.2rem;
-  --fs-h4: 2.4rem;
-  --fs-h5: 1.8rem;
-  --fs-h6: 1.2rem;
+  --fs-h1: clamp(4.88rem, 4.37vw + 3.24rem, 8.84rem);
+  --fs-h2: clamp(3.91rem, 3.01vw + 2.78rem, 6.63rem);
+  --fs-h3: clamp(3.13rem, 2.04vw + 2.36rem, 4.97rem);
+  --fs-h4: clamp(2.5rem, 1.36vw + 1.99rem, 3.73rem);
+  --fs-h5: clamp(2rem, 0.88vw + 1.67rem, 2.8rem);
+  --fs-h6: clamp(1.28rem, 0.33vw + 1.16rem, 1.58rem);
 
   --clr-primary: #14213d;
   --clr-secondary: #fca311;
-
 }
-
-
-
 
 $blue: #14213d;
 $orange: #fca311;
