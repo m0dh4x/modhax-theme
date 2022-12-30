@@ -1,11 +1,6 @@
 @import "reset";
 @import "variables";
 
-body {
-  font-size: var(--fs-base);
-  font-family: var(--ff-base);
-}
-
 h1,
 .h1 {
   font-size: var(--fs-h1);

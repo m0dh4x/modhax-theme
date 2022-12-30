@@ -2,4 +2,4 @@
 title = "This will be the about page"
 +++
 
-### Example Content.
+### H3 - About

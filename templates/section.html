@@ -8,14 +8,12 @@
 {% block content %}
   
   <h1 class="main-title"></h1>
-  <span class="main-cursor"></span>
   {% set test = get_section(path=section.subsections | first) %}
 
-  <h2>My first Zola page! </h2>
+  <h2>H2 - Example Content</h2>
 
 {% for page in section.pages %}
 
-  <h3>{{page.title}}</h3>
   {{page.content | safe}}
 
 {% endfor%}
