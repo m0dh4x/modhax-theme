@@ -1,4 +1,5 @@
-const textList = ["developer", "frontend", "love to code"];
+//const textList = ["Example Content", "frontend", "love to code"];
+const textList = ["Example Content"];
 let textListIndex = 0;
 let wordIndex = 0;
 
