@@ -1,23 +1,47 @@
-{% import "macros/head.html" as macros_head %}
+{% import "macros/head.html" as macros_head %} 
+{% import "macros/navigation.html" as macros_navigation %}
 
-<!DOCTYPE HTML>
+{% set test = get_section(path="_index.md") %}
+
+<!DOCTYPE html>
 <html>
-<head>
-  {{ macros_head::meta() }}
+  <head>
+    {{ macros_head::meta() }} 
+    
+    {% block pagetitle %} 
+    {{ macros_head::site_title(page_title="Home") }} 
+    {% endblock pagetitle %} 
+    
+    {{ macros_head::stylesheet() }}
+  </head>
+  <body>
 
-  {% block pagetitle %}
-    {{ macros_head::site_title(page_title="Home") }}
-  {% endblock pagetitle %}
+    {{ macros_navigation::navigation()}}
 
-  {{ macros_head::stylesheet() }}
-</head>
-<body>
-  
-  {% block content %}{% endblock content%}
-  <script
+    <section class="hero">
+      {# <svg
+        class="divider"
+        data-name="Layer 1"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1200 120"
+        preserveAspectRatio="none"
+      >
+        <path
+          d="M1200 120L0 16.48 0 0 1200 0 1200 120z"
+          class="shape-fill"
+        ></path>
+      </svg> #}
+      <h1 class="main-title"></h1>
+      {% for title in test.extra.titles %}
+        <h1 class="hidden" style="display: none;" >{{ title }}</h1>
+      {% endfor %}
+    </section>
+
+
+    {% block content %}{% endblock content%}
+    <script
       type="text/javascript"
       src="{{get_url(path='js/main.js') | safe }}"
     ></script>
-</body>
-
+  </body>
 </html>

@@ -1,4 +1,4 @@
-description = "A about theme with blog"
+description = "A portfolio theme"
 homepage = "https://github.com/getzola/hyde"
 license = "MIT"
 name = "modhax theme"
@@ -17,10 +17,3 @@ demo = "https://www.modhax-theme.dev"
 [author]
 homepage = "https://modhax.dev"
 name = "Florian Drews"
-
-# If this is porting a theme from another static site engine, provide
-# the info of the original author here
-[original]
-author = "mdo"
-homepage = "https://markdotto.com/"
-repo = "https://www.github.com/mdo/hyde"

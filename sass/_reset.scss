@@ -7,7 +7,9 @@
   GitHub page: https://github.com/elad2412/the-new-css-reset
 */
 
-*:where(:not(html, iframe, canvas, img, svg, video, audio)) {
+*:where(
+    :not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)
+  ) {
   all: unset;
   display: revert;
 }
@@ -20,7 +22,7 @@
   box-sizing: border-box;
 }
 
-// set base font size to 10px for easy calculation if you use rem as unit
+// set base font size with clamp from 10px (375 width) to 21px
 html {
   font-size: var(--fs-base);
   font-family: var(--ff-base);

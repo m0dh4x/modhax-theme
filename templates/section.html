@@ -1,38 +1,27 @@
-{% extends "index.html" %}
+{% extends "index.html" %} 
 
-{% block pagetitle %}
-    {{ macros_head::site_title(page_title = section.title) }}
+{% block pagetitle %} 
+  {{ macros_head::site_title(page_title = section.title) }} 
 {% endblock pagetitle %}
- 
 
 {% block content %}
-  
-  <h1 class="main-title"></h1>
-  {% set test = get_section(path=section.subsections | first) %}
 
-  <h2>H2 - Example Content</h2>
+{% set test = get_section(path=section.subsections | first) %} 
 
-  <h3>H3 - Example Content</h3>
-  <h4>H4 - Example Content</h5>
-  <h5>H5 - Example Content</h5>
-  <h6>H6 - Example Content</h6>
-
-{% for page in section.pages %}
-
-  {{page.content | safe}}
-
+{% for page in section.pages %} 
+  {{page.content | safe }}
 {% endfor%}
 
 <h2>BLOG</h2>
 
 {% for test in test.pages %}
-  <p> {{test.title}}</p>
-  <a href="{{test.permalink}}">weiterlesen</a>
+<p>{{test.title}}</p>
+<a href="{{test.permalink}}">weiterlesen</a>
 {% endfor %}
 
-
 <pre>{{section | json_encode(pretty=true)}}</pre>
-{# <pre>{{test | json_encode(pretty=true)}}</pre> #}
-{# <pre>{{test | json_encode(pretty=true)}}</pre> #}
-
-{% endblock content%}
+{#
+<pre>{{test | json_encode(pretty=true)}}</pre>
+#} {#
+<pre>{{test | json_encode(pretty=true)}}</pre>
+#} {% endblock content%}

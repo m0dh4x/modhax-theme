@@ -1,5 +1,5 @@
 +++
-title = "This will be the portfolio page"
+title = "Portfolio"
 +++
 
 ### H3 - Portfolio

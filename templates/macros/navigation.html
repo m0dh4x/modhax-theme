@@ -1,5 +1,13 @@
 {% macro navigation() %}
-  <nav>
-    
+{% set config = get_section(path="_index.md") %}
+  <nav class="nav">
+    <div class="container">
+      <span class="h6">{{ config.title }}</span>
+      <ul>
+        {% for pages in config.pages %}
+        <li class="h6">{{ pages.title }}</li>
+        {% endfor %}
+      </ul>
+    </div>
   </nav>
 {% endmacro %}

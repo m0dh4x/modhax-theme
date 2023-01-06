@@ -1,5 +1,5 @@
 +++
-title = "This will be the about page"
+title = "About"
 +++
 
 ### H3 - About

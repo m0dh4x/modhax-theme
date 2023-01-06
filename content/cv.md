@@ -1,5 +1,5 @@
 +++
-title = "This will be the CV page"
+title = "Curriculum Vitae"
 +++
 
 ### H3 - CV

@@ -39,8 +39,51 @@ h5,
 h6,
 .h6 {
   font-size: var(--fs-h6);
-  font-weight: bold;
+  font-weight: 900;
   text-transform: uppercase;
+}
+
+.nav {
+  height: 3rem;
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  color: #ffffff;
+  width: 100%;
+}
+
+.nav li {
+  padding-right: 1rem;
+}
+
+.hero {
+  background-image: linear-gradient(45deg, #355c7d, #6c5b7b, #c06c84);
+  height: 100vh;
+}
+
+.divider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+  height: auto;
+}
+
+.divider .shape-fill {
+  fill: #ffffff;
+}
+
+.container {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.container > ul {
+  display: flex;
 }
 
 // test

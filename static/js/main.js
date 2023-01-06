@@ -1,9 +1,17 @@
 //const textList = ["Example Content", "frontend", "love to code"];
-const textList = ["Example Content"];
+let textList = [];
 let textListIndex = 0;
 let wordIndex = 0;
 
-const heading = document.querySelector("h1");
+document
+  .querySelectorAll(".hidden")
+  .forEach((el) => textList.push(el.textContent));
+
+console.log(textList);
+
+const heading = document.querySelector(".main-title");
+
+console.log(heading)
 
 const type = () => {
   if (wordIndex < textList[textListIndex].length) {
