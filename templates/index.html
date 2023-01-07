@@ -19,7 +19,7 @@
     {{ macros_navigation::navigation()}}
 
     <section class="hero">
-      {# <svg
+      <svg
         class="divider"
         data-name="Layer 1"
         xmlns="http://www.w3.org/2000/svg"
@@ -30,11 +30,14 @@
           d="M1200 120L0 16.48 0 0 1200 0 1200 120z"
           class="shape-fill"
         ></path>
-      </svg> #}
+      </svg>
+      <span class="h4">Hi, i am {{ test.extra.name }}</span>
       <h1 class="main-title"></h1>
+      <span class="h4">Based in Nowhere</span>
       {% for title in test.extra.titles %}
-        <h1 class="hidden" style="display: none;" >{{ title }}</h1>
+        <span class="hidden" style="display: none;" >{{ title }}</span>
       {% endfor %}
+      <span></span>
     </section>
 
 

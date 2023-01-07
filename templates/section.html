@@ -9,7 +9,9 @@
 {% set test = get_section(path=section.subsections | first) %} 
 
 {% for page in section.pages %} 
-  {{page.content | safe }}
+  <div class="section">
+    {{page.content | safe }}
+  </div>
 {% endfor%}
 
 <h2>BLOG</h2>
