@@ -1,45 +1,33 @@
-{% import "macros/head.html" as macros_head %} 
-{% import "macros/navigation.html" as macros_navigation %}
-
-{% set test = get_section(path="_index.md") %}
+{% import "macros/head.html" as macros_head %} {% import
+"macros/navigation.html" as macros_navigation %} {% set test =
+get_section(path="_index.md") %}
 
 <!DOCTYPE html>
 <html>
   <head>
-    {{ macros_head::meta() }} 
-    
-    {% block pagetitle %} 
-    {{ macros_head::site_title(page_title="Home") }} 
-    {% endblock pagetitle %} 
-    
-    {{ macros_head::stylesheet() }}
+    {{ macros_head::meta() }} {% block pagetitle %} {{
+    macros_head::site_title(page_title="Home") }} {% endblock pagetitle %} {{
+    macros_head::stylesheet() }}
   </head>
   <body>
-
     {{ macros_navigation::navigation()}}
 
     <section class="hero">
-      <svg
-        class="divider"
-        data-name="Layer 1"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 1200 120"
-        preserveAspectRatio="none"
-      >
-        <path
-          d="M1200 120L0 16.48 0 0 1200 0 1200 120z"
-          class="shape-fill"
-        ></path>
-      </svg>
-      <span class="h4">Hi, i am {{ test.extra.name }}</span>
-      <h1 class="main-title"></h1>
-      <span class="h4">Based in Nowhere</span>
-      {% for title in test.extra.titles %}
-        <span class="hidden" style="display: none;" >{{ title }}</span>
-      {% endfor %}
-      <span></span>
-    </section>
+      <div>
+        <div>
+          <span class="h4">Hi, i am {{ test.extra.name }}</span>
+          <h1 class="main-title">Developer</h1>
+          <span class="h4">Based in Nowhere</span>
+          {% for title in test.extra.titles %}
+            <span class="hidden" style="display: none">{{ title }}</span>
+          {% endfor %}
+        </div>
+      </div>
 
+      <div class="image">
+        <img src="{{get_url(path='img/foto_mac.jpg')}}" />
+      </div>
+    </section>
 
     {% block content %}{% endblock content%}
     <script

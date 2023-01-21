@@ -6,6 +6,9 @@ h1,
   font-size: var(--fs-h1);
   font-weight: bold;
   text-transform: uppercase;
+  // background: linear-gradient(45deg, #355c7d, #6c5b7b, #c06c84);
+  // -webkit-text-fill-color: transparent;
+  // -webkit-background-clip: text;
 }
 
 h2,
@@ -20,6 +23,7 @@ h3,
   font-size: var(--fs-h3);
   font-weight: bold;
   text-transform: uppercase;
+  visibility: hidden;
 }
 
 h4,
@@ -44,7 +48,8 @@ h6,
 }
 
 body {
-  color: #c06c84;
+  color: #fff;
+  background-color: #191a1e;
 }
 
 .nav {
@@ -53,9 +58,7 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: #ffffff;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  color: #355c7d;
+  color: #fff;
 }
 
 .nav li {
@@ -68,29 +71,48 @@ body {
 }
 
 .hero {
-  background-image: linear-gradient(45deg, #355c7d, #6c5b7b, #c06c84);
+  //background-image: linear-gradient(45deg, #355c7d, #6c5b7b, #c06c84);
   height: 100vh;
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  text-shadow: -1px 2px 4px rgba(0, 0, 0, 0.6);
+  //text-shadow: -1px 2px 4px rgba(0, 0, 0, 0.6);
   align-items: center;
 }
 
-.divider {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-  transform: rotate(180deg);
-  height: auto;
+.hero > div {
+  flex-basis: 50%;
+  display: flex;
+  justify-content: center;
 }
 
-.divider .shape-fill {
-  fill: #ffffff;
+.image {
+  position: relative;
 }
+
+.image img {
+  border-radius: 100%;
+  animation-name: border-transform;
+  animation: border-transform 10s linear infinite alternate forwards;
+  -webkit-animation: border-transform 10s linear infinite alternate forwards;
+  // -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  // clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  width: 80%;
+}
+
+// .divider {
+//   position: absolute;
+//   bottom: 0;
+//   left: 0;
+//   width: 100%;
+//   overflow: hidden;
+//   line-height: 0;
+//   transform: rotate(180deg);
+//   height: auto;
+// }
+
+// .divider .shape-fill {
+//   fill: #ffffff;
+// }
 
 .container {
   margin: 0 auto;
@@ -110,11 +132,73 @@ body {
   animation: blink 500ms linear infinite alternate;
 }
 
+.foo > h3 {
+  visibility: visible;
+}
+.foo > h3 > span {
+  -webkit-animation: textFade 0.5s cubic-bezier(0.3, 0, 0.7, 1) both;
+  animation: textFade .5s cubic-bezier(0.3, 0, 0.7, 1) both;
+  animation-delay: calc(30ms * var(--char-idx));
+}
+
+.blog-container {
+  article {
+    display: flex;
+    color: #fff;
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+    &> picture, div {
+      flex-basis: 50%;
+    }
+  }
+}
+
+@keyframes textFade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 @keyframes blink {
   0% {
     opacity: 0;
   }
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes border-transform {
+  0%,
+  100% {
+      border-radius: 63% 37% 54% 46%/55% 48% 52% 45%
+  }
+
+  14% {
+      border-radius: 40% 60% 54% 46%/49% 60% 40% 51%
+  }
+
+  28% {
+      border-radius: 54% 46% 38% 62%/49% 70% 30% 51%
+  }
+
+  42% {
+      border-radius: 61% 39% 55% 45%/61% 38% 62% 39%
+  }
+
+  56% {
+      border-radius: 61% 39% 67% 33%/70% 50% 50% 30%
+  }
+
+  70% {
+      border-radius: 50% 50% 34% 66%/56% 68% 32% 44%
+  }
+
+  84% {
+      border-radius: 46% 54% 50% 50%/35% 61% 39% 65%
   }
 }

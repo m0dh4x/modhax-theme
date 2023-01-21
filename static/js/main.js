@@ -1,38 +1,34 @@
-//const textList = ["Example Content", "frontend", "love to code"];
-let textList = [];
-let textListIndex = 0;
-let wordIndex = 0;
+const sectionTitles = document.querySelectorAll('.section h3')
 
-document
-  .querySelectorAll(".hidden")
-  .forEach((el) => textList.push(el.textContent));
+sectionTitles.forEach((sectionTitle) => {
+  
+  const chars = sectionTitle.innerHTML.split('')
+  sectionTitle.textContent = ''
 
-console.log(textList);
+  chars.forEach( (char, key)=> {
+    const span = document.createElement('span')
+    sectionTitle.appendChild(span)
+    span.style = `--char-idx: ${key};`
+    span.textContent = char
+  })
+})
 
-const heading = document.querySelector(".main-title");
+const targetEl = document.querySelectorAll('section')
 
-console.log(heading)
+const options = {
+  threshold: 0.1
+}
 
-const type = () => {
-  if (wordIndex < textList[textListIndex].length) {
-    heading.textContent = textList[textListIndex].substring(0, wordIndex + 1);
-    wordIndex++;
-    setTimeout(type, 200);
-  } else {
-    setTimeout(remove, 100);
-  }
-};
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('foo')
+      observer.unobserve(entry.target)
+    }
+  })
+}, options);
 
-const remove = () => {
-  if (wordIndex > 0) {
-    heading.textContent = textList[textListIndex].substring(0, wordIndex - 1);
-    wordIndex--;
-    setTimeout(remove, 100);
-  } else {
-    textListIndex++;
-    if (textListIndex >= textList.length) textListIndex = 0;
-    setTimeout(type, 200);
-  }
-};
 
-window.addEventListener("load", type);
+targetEl.forEach(el => {
+  observer.observe(el)
+})
