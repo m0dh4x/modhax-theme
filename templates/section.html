@@ -5,39 +5,40 @@
 {% endblock pagetitle %}
 
 {% block content %}
+  {% set blog = get_section(path=section.subsections | first) %} 
 
-{% set test = get_section(path=section.subsections | first) %} 
+  {% for page in section.pages %} 
+    <section class="section">
+      {{page.content | safe }}
+    </section>
+  {% endfor%}
 
-{% for page in section.pages %} 
-  <section class="section">
-    {{page.content | safe }}
-  </section>
-{% endfor%}
+  <h2>BLOG</h2>
 
-<h2>BLOG</h2>
+{# <pre>{{ test | json_encode(pretty=true) }}</pre> #}
 
-<pre>{{ test | json_encode(pretty=true) }}</pre>
+  <div class="blog-container">
+  {% for page in blog.pages %}
+    <article>
+      {% if page.extra.image %}
+        <picture>
+          <source srcset="" />
+          <img src="{{get_url(path='img/' ~ page.extra.image)}}" />
+        </picture>
+      {% endif %}
+      <div>
+        <p>{{ page.date | date(format="%d. %b %Y")}}</p>
+        <h2>{{page.title}}</h2>
+        {%if page.extra.author %}
+          <p>{{ page.extra.author }}</p>
+        {% endif %}
+        <p>{{page.description | safe}}</p>
+        <a href="{{page.permalink}}">weiterlesen</a>
+      </div>
+    </article>
+  {% endfor %}
+  </div>
 
-<div class="blog-container">
-{% for foobar in test.pages %}
-  <article>
-    <picture>
-      <source srcset="" />
-      <img src="{{get_url(path='img/' ~ foobar.extra.image)}}" />
-    </picture>
-    <div>
-      <p>{{ foobar.date | date(format="%d.%m.%Y")}}</p>
-      <p>{{foobar.title}}</p>
-      <p>{{foobar.description | safe}}</p>
-      <a href="{{test.permalink}}">weiterlesen</a>
-    </div>
-  </article>
-{% endfor %}
-</div>
+{# <pre>{{section | json_encode(pretty=true)}}</pre> #}
 
-<pre>{{section | json_encode(pretty=true)}}</pre>
-{#
-<pre>{{test | json_encode(pretty=true)}}</pre>
-#} {#
-<pre>{{test | json_encode(pretty=true)}}</pre>
-#} {% endblock content%}
+{% endblock content %}

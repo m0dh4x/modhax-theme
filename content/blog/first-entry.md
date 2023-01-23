@@ -2,8 +2,10 @@
 title = "lorem ipsum dolor sit amet"
 description = "Sunt qui sunt irure id in Lorem deserunt in in. Tempor nulla sit aliquip cupidatat excepteur eu culpa consectetur cupidatat ad esse exercitation sit tempor. Enim consequat dolor culpa cupidatat incididunt ad quis. Aliqua laboris enim sit excepteur laboris commodo elit aliqua."
 date = 2022-01-22
+
 [extra]
 image = "article_1.jpg"
+author = "Florian Drews"
 +++
 
 
