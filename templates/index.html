@@ -1,4 +1,5 @@
 {% import "macros/head.html" as macros_head %} 
+{% import "macros/header.html" as macros_header %} 
 {% import "macros/navigation.html" as macros_navigation %}
 
 {% set test = get_section(path="_index.md") %}
@@ -11,29 +12,31 @@
     macros_head::stylesheet() }}
   </head>
   <body>
-    {{ macros_navigation::navigation()}}
-
-    <section class="hero">
-      <div>
+    {{ macros_header::header() }}
+    {{ macros_navigation::navigation() }}
+    <div class="container">
+      <section class="hero">
         <div>
-          <span class="h4">Hi, i am {{ test.extra.name }}</span>
-          <h1 class="main-title">Developer</h1>
-          <span class="h4">Based in Nowhere</span>
-          {% for title in test.extra.titles %}
-            <span class="hidden" style="display: none">{{ title }}</span>
-          {% endfor %}
+          <div>
+            <span class="h4">Hi, i am {{ test.extra.name }}</span>
+            <h1 class="main-title">Developer</h1>
+            <span class="h4">Based in Nowhere</span>
+            {% for title in test.extra.titles %}
+              <span class="hidden" style="display: none">{{ title }}</span>
+            {% endfor %}
+          </div>
         </div>
-      </div>
 
-      <div class="image">
-        <img src="{{get_url(path='img/foto_mac.jpg')}}" />
-      </div>
-    </section>
+        <div class="image">
+          <img src="{{get_url(path='img/foto_mac.jpg')}}" />
+        </div>
+      </section>
 
-    {% block content %}{% endblock content%}
-    <script
-      type="text/javascript"
-      src="{{get_url(path='js/main.js') | safe }}"
-    ></script>
+      {% block content %}{% endblock content %}
+    </div>
+      <script 
+        type="text/javascript"
+        src="{{get_url(path='js/main.js') | safe }}">
+      </script>
   </body>
 </html>

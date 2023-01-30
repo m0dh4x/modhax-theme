@@ -37,7 +37,6 @@ h5,
 .h5 {
   font-size: var(--fs-h5);
   font-weight: bold;
-  text-transform: uppercase;
 }
 
 h6,
@@ -52,19 +51,55 @@ body {
   background-color: #191a1e;
 }
 
+
 .nav {
-  height: 3rem;
-  z-index: 1;
+  z-index: 2;
   position: fixed;
   top: 0;
-  width: 100%;
+  bottom: 0;
+  right: 0;
   color: #fff;
+  display: flex;
+  transform: translateX(100%);
+  transition: transform .3s ease-in;
+  background-color: #fff;
+  color: black;
+  min-height: 300px;
+}
+
+.nav ul {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.nav-toggle {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1rem;
+  height: 1rem;
+}
+
+.nav-toggle:checked ~ .nav {
+  transform: translateX(0);
+
+}
+.nav-toggle:checked ~ label {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1;
 }
 
 .nav li {
   padding-right: 1rem;
 }
-
 .section {
   height: 100vh;
   color: #355c7d;
@@ -116,10 +151,11 @@ body {
 
 .container {
   margin: 0 auto;
-  display: flex;
   justify-content: space-between;
   align-items: center;
   height: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
 }
 
 .container > ul {

@@ -1,14 +1,13 @@
 {% macro navigation() %}
 {% set config = get_section(path="_index.md") %}
-  <nav class="nav">
-    <div class="container">
-      <span class="h6">{{ config.title }}</span>
-      <ul>
-        {% for pages in config.pages %}
-        <li class="h6">{{ pages.title }}</li>
-        {% endfor %}
-        <li class="h6">Blog</li>
-      </ul>
-    </div>
-  </nav>
+<input class="nav-toggle" id="nav-toggle" type="checkbox">
+<label for="nav-toggle"></label>
+<nav class="nav">
+  <ul>
+    {% for pages in config.pages %}
+    <li class="h6">{{ pages.title }}</li>
+    {% endfor %}
+    <li class="h6">Blog</li>
+  </ul>
+</nav>
 {% endmacro %}

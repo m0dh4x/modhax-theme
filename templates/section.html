@@ -13,7 +13,7 @@
     </section>
   {% endfor%}
 
-  <h2>BLOG</h2>
+  <h3>BLOG</h3>
 
 {# <pre>{{ test | json_encode(pretty=true) }}</pre> #}
 
@@ -28,11 +28,11 @@
       {% endif %}
       <div>
         <p>{{ page.date | date(format="%d. %b %Y")}}</p>
-        <h2>{{page.title}}</h2>
+        <h5>{{ page.title }}</h5>
         {%if page.extra.author %}
           <p>{{ page.extra.author }}</p>
         {% endif %}
-        <p>{{page.description | safe}}</p>
+        <p>{{ page.description | safe}}</p>
         <a href="{{page.permalink}}">weiterlesen</a>
       </div>
     </article>
