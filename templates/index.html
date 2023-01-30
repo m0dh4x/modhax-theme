@@ -7,9 +7,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    {{ macros_head::meta() }} {% block pagetitle %} {{
-    macros_head::site_title(page_title="Home") }} {% endblock pagetitle %} {{
-    macros_head::stylesheet() }}
+    {{ macros_head::meta() }} 
+    
+    {% block pagetitle %} 
+      {{ macros_head::site_title(page_title="Home") }} 
+    {% endblock pagetitle %} 
+
+    {{ macros_head::stylesheet() }}
   </head>
   <body>
     {{ macros_header::header() }}
